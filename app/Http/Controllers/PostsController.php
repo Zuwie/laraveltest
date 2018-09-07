@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Posts;
+use App\Post;
 
 class PostsController extends Controller
 {
@@ -35,13 +35,12 @@ class PostsController extends Controller
      */
     public function store()
     {
-        $post = new Posts;
+        $this->validate(request(), [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
 
-        $post->title = request('title');
-        $post->body = request('body');
-
-
-        // $post->save();
+        Post::create(request(['title', 'body']));
 
         return redirect('/');
     }

@@ -2,9 +2,9 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-xl-8 col-md-12">
+    <main class="col-xl-8 col-md-12">
       @yield('content')
-    </div>
+    </main>
     
     @include('layouts.sidepanel')
   </div>
