@@ -15,6 +15,9 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/posts', 'PostsController@index')->name('posts');
 Route::get('/posts/create', 'PostsController@create');
+
+Route::post('/posts', 'PostsController@store');
+
 Route::get('/posts/{$id}', 'PostsController@show');
 
 
